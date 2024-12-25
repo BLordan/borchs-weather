@@ -1,0 +1,7 @@
+{
+  "name": "borchs-weather",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
