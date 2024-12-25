@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { Link } from 'src/app/interfaces/link';
+import { Link } from 'src/app/share/interfaces/link';
 
 @Component({
   selector: 'app-wetterzentrale',
