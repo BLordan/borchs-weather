@@ -1,0 +1,84 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>wetterzentrale</ion-title>
+    <ion-toggle
+      checked="prefersDark"
+      (ionChange)="toggleTheme()"
+      slot="end"
+    ></ion-toggle>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label> Europa </ion-label>
+    </ion-item-divider>
+
+    <ion-list>
+      <ion-card
+        *ngFor="let item of europe; let idx = index"
+        (click)="viewPrediction(item.url!)"
+      >
+        <ion-item>
+          <ion-avatar slot="start">
+            <img *ngIf="item.image" [src]="item.image" [alt]="item.zone" />
+          </ion-avatar>
+          <ion-label>
+            <h2>{{ item.zone }}</h2>
+          </ion-label>
+        </ion-item>
+      </ion-card>
+    </ion-list>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label> España </ion-label>
+    </ion-item-divider>
+
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label> GEM </ion-label>
+      </ion-item-divider>
+
+      <ion-list>
+        <ion-card
+          *ngFor="let item of espanaGEM; let idx = index"
+          (click)="viewPrediction(item.url!)"
+        >
+          <ion-item>
+            <ion-avatar slot="start">
+              <img *ngIf="item.image" [src]="item.image" [alt]="item.zone" />
+            </ion-avatar>
+            <ion-label>
+              <h2>{{ item.zone }}</h2>
+            </ion-label>
+          </ion-item>
+        </ion-card>
+      </ion-list>
+    </ion-item-group>
+
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label> ARPEGE </ion-label>
+      </ion-item-divider>
+
+      <ion-list>
+        <ion-card
+          *ngFor="let item of espanaARPEGE; let idx = index"
+          (click)="viewPrediction(item.url!)"
+        >
+          <ion-item>
+            <ion-avatar slot="start">
+              <img *ngIf="item.image" [src]="item.image" [alt]="item.zone" />
+            </ion-avatar>
+            <ion-label>
+              <h2>{{ item.zone }}</h2>
+            </ion-label>
+          </ion-item>
+        </ion-card>
+      </ion-list>
+    </ion-item-group>
+  </ion-item-group>
+</ion-content>
